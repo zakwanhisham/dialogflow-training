@@ -337,3 +337,107 @@ do {
   <body></body>
 </html>
 ```
+
+---
+
+### Conditional Statements
+
+#### How to use conditional statements
+
+- Conditional Statements are used to decide the flow of execution based on different conditions. If a condition is true, you can perform one action and if the condition is false, you can perform another action.
+- There are mainly 3 types of conditional statements
+  1. If statement
+  2. If...Else statement
+  3. If...Else If...Else statement
+
+#### If Statement
+
+Syntax:
+
+```javascript
+if (condition) {
+  // lines of code to be execute
+}
+```
+
+- Use `If statement` if you want to check only a specific condition
+
+- Exercise:
+
+```html
+<html>
+  <head>
+    <title>IF Statments!!!</title>
+    <script>
+      var age = prompt("Please enter your age");
+      if (age >= 18) document.write("You are an adult <br />");
+      if (age < 18) document.write("You are NOT an adult <br />");
+    </script>
+  </head>
+  <body></body>
+</html>
+```
+
+#### If...Else Statement
+
+Syntax:
+
+```javascript
+if (condition) {
+  // lines of code to be execute
+} else {
+  // lines of code to be execute
+}
+```
+
+- Use `If...Else statement` if you want to check two conditions and execute a different set of codes.
+
+- Exercise
+
+```html
+<html>
+  <head>
+    <title>If...Else Statments!!!</title>
+    <script>
+      // Get the current hours
+      var hours = new Date().getHours();
+      if (hours < 12) document.write("Good Morning!!!<br />");
+      else document.write("Good Afternoon!!!<br />");
+    </script>
+  </head>
+  <body></body>
+</html>
+```
+
+#### If...Else If...Else statement
+
+```javascript
+if (condition1) {
+  // lines of code to be execute
+} else if (condition2) {
+  // lines of code to be execute
+} else {
+  // lines of code to be execute
+}
+```
+
+- Use `If...Else If...Else statement` if you want to check more than two conditions.
+
+- Exercise
+
+```html
+<html>
+  <head>
+    <script>
+      var one = prompt("Enter the first number");
+      var two = prompt("Enter the second number");
+      one = parseInt(one);
+      two = parseInt(two);
+      if (one == two) document.write(one + " is equal to " + two + ".");
+      else if (one < two) document.write(one + " is less than " + two + ".");
+      else document.write(one + " is greater than " + two + ".");
+    </script>
+  </head>
+  <body></body>
+</html>
+```
