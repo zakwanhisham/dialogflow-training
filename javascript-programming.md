@@ -12,7 +12,7 @@
 
 | Javascript Advance Stuff! |                                                                                                     |
 | ------------------------- | --------------------------------------------------------------------------------------------------- |
-| Lesson 1                  | [Javascript Define & Call Functions](#javascript-define-&-functions)                                |
+| Lesson 1                  | [Javascript Define & Call Functions](#javascript-define-&-call-functions)                           |
 | Lesson 2                  | [Cookies in Javascript](#cookies-in-javascript)                                                     |
 | Lesson 3                  | [Javascript DOM Tutorial](#javascript-dom-tutorial)                                                 |
 | Lesson 4                  | [OOJS Tutorial](#oojs tutorial)                                                                     |
@@ -436,6 +436,114 @@ if (condition1) {
       if (one == two) document.write(one + " is equal to " + two + ".");
       else if (one < two) document.write(one + " is less than " + two + ".");
       else document.write(one + " is greater than " + two + ".");
+    </script>
+  </head>
+  <body></body>
+</html>
+```
+
+---
+
+### JavaScript Define & Call Functions
+
+#### What is function in JavaScript?
+
+- A block of code which will be executed only if it is called.
+- Very important and useful in any programming language as it makes the code reusable.
+
+#### Creating Function in JavaScript
+
+Syntax:
+
+```javascript
+function functionName() {
+  // block of code
+}
+```
+
+- Exercise
+
+```html
+<html>
+  <head>
+    <title>Functions</title>
+    <script>
+      function myFunction() {
+        document.write("This is a simple function.<br />");
+      }
+      myFunction();
+    </script>
+  </head>
+  <body></body>
+</html>
+```
+
+#### Function with Argument
+
+Syntax:
+
+```javascript
+function functionName(arg1, arg2) {
+  // block of code
+}
+```
+
+- Exercise
+
+```html
+<html>
+  <head>
+    <script>
+      var count = 0;
+      function countVowels(name) {
+        for (var i = 0; i < name.length; i++) {
+          if (
+            name[i] == "a" ||
+            name[i] == "e" ||
+            name[i] == "i" ||
+            name[i] == "o" ||
+            name[i] == "u"
+          )
+            count = count + 1;
+        }
+        document.write(
+          "Hello " + name + "!!! Your name has " + count + " vowels."
+        );
+      }
+      var myName = prompt("Please enter your name");
+      countVowels(myName);
+    </script>
+  </head>
+  <body></body>
+</html>
+```
+
+#### JavaScript Return Value
+
+Syntax:
+
+```javascript
+function functionName(arg1, arg2) {
+  // block of code
+  return val1;
+}
+```
+
+- Exercise
+
+```html
+<html>
+  <head>
+    <script>
+      function returnSum(first, second) {
+        var sum = first + second;
+        return sum;
+      }
+      var firstNo = 78;
+      var secondNo = 22;
+      document.write(
+        firstNo + " + " + secondNo + " = " + returnSum(firstNo, secondNo)
+      );
     </script>
   </head>
   <body></body>
