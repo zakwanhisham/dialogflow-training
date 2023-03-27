@@ -2,13 +2,13 @@
 
 ## Table of Content
 
-| First steps in Javascript Basic for Beginners |                                                       |
-| --------------------------------------------- | ----------------------------------------------------- |
-| Lesson 1                                      | [What is Javascript](#what-is-javascript)             |
-| Lesson 2                                      | [Javascript Variables](#javascript-variables)         |
-| Lesson 3                                      | [Javascript Array Methods](#javascript-array-methods) |
-| Lesson 4                                      | [Javascript Loops](#javascript-loops)                 |
-| Lesson 5                                      | [Conditional Statements](#conditional-statements)     |
+| First steps in Javascript Basic for Beginners |                                                   |
+| --------------------------------------------- | ------------------------------------------------- |
+| Lesson 1                                      | [What is Javascript](#what-is-javascript)         |
+| Lesson 2                                      | [Javascript Variables](#javascript-variables)     |
+| Lesson 3                                      | [Javascript Array Methods](#what-is-an-array)     |
+| Lesson 4                                      | [Javascript Loops](#javascript-loops)             |
+| Lesson 5                                      | [Conditional Statements](#conditional-statements) |
 
 | Javascript Advance Stuff! |                                                     |
 | ------------------------- | --------------------------------------------------- |
@@ -141,3 +141,89 @@ name = "Zakwan";
 ```
 
 ---
+
+### What is an Array?
+
+- Object that can store a `collection of items`.
+- Useful when you need to store large amounts of data of the same type.
+- To access items inside array, you can refer to its `indexNumber` and the index start with `zero`.
+
+### Javascript Create Array
+
+```javascript
+var students = ["John", "Ann", "Kevin"];
+```
+
+- If you want to add more to the array, you can use:
+
+```javascript
+students[3] = "Emma";
+students[4] = "Rose";
+```
+
+- You can also create an array using `Array Constructor`:
+
+```javascript
+var students = new Array("John", "Ann", "Kevin");
+```
+
+OR
+
+```javascript
+var students = new Array();
+students[0] = "John";
+students[1] = "Ann";
+students[2] = "Kevin";
+```
+
+#### JavaScript Array Methods
+
+- The array object has many properties and methods which help developers to handle arrays easily and efficiently
+
+1. `length property` -> number of elements inside an array.
+2. `prototype property` -> add new properties and methods.
+3. `reverse method` -> reverse the order of items inside an array.
+4. `sort method` -> sort the items inside an array.
+5. `pop method` -> remove the last item of an array.
+6. `shift method` -> remove the first item of an array.
+7. `push method` -> add a values as the last item of an array.
+
+- Exercise:
+
+```html
+<html>
+  <head>
+    <title>Arrays</title>
+    <script type="text/javascript">
+      var students = new Array("John", "Ann", "Aaron", "Edwin", "Elizabeth");
+      Array.prototype.displayItems = function () {
+        for (i = 0; i < this.length; i++) {
+          document.write(this[i] + "<br />");
+        }
+      };
+      document.write("students array<br />");
+      students.displayItems();
+      document.write(
+        "<br />The number of items in students array is " +
+          students.length +
+          "<br />"
+      );
+      document.write("<br />The SORTED students array<br />");
+      students.sort();
+      students.displayItems();
+      document.write("<br />The REVERSED students array<br />");
+      students.reverse();
+      students.displayItems();
+      document.write(
+        "<br />THE students array after REMOVING the LAST item<br />"
+      );
+      students.pop();
+      students.displayItems();
+      document.write("<br />THE students array after PUSH<br />");
+      students.push("New Stuff");
+      students.displayItems();
+    </script>
+  </head>
+  <body></body>
+</html>
+```
