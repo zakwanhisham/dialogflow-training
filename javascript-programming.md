@@ -80,3 +80,64 @@
   <body></body>
 </html>
 ```
+
+---
+
+### JavaScript Variables
+
+- Variables are used to `store values or expressions`.
+
+#### Declare Variables in JavaScript
+
+- Before using a variable, you can declare it first before use.
+
+```javascript
+var name;
+```
+
+#### Assign a value to the Variable
+
+- You can assign a value to a variable either while declaring the variable or after.
+
+```javascript
+var name = "Zakwan";
+```
+
+OR
+
+```javascript
+var name;
+name = "Zakwan";
+```
+
+#### Naming Variables
+
+- It is a good practice to give descriptive and meaningful names to the variables.
+- JavaScript uses `camelCase` as it naming convention.
+- Exercise:
+
+```html
+<html>
+  <head>
+    <title>Variables</title>
+    <script>
+      var one = 22;
+      var two = 3;
+      var add = one + two;
+      var minus = one - two;
+      var multiply = one * two;
+      var divide = one / two;
+      document.write(
+        "First No: = " + one + "<br/>Second No: = " + two + " <br/>"
+      );
+      document.write(one + " + " + two + " = " + add + "<br/>");
+      document.write(one + " - " + two + " = " + minus + "<br/>");
+      document.write(one + " * " + two + " = " + multiply + "<br/>");
+      document.write(one + " / " + two + " = " + divide + "<br/>");
+    </script>
+  </head>
+  <body></body>
+</html>
+```
+
+---
