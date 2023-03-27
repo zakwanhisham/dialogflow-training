@@ -2,28 +2,28 @@
 
 ## Table of Content
 
-| First steps in Javascript Basic for Beginners |                                                   |
-| --------------------------------------------- | ------------------------------------------------- |
-| Lesson 1                                      | [What is Javascript](#what-is-javascript)         |
-| Lesson 2                                      | [Javascript Variables](#javascript-variables)     |
-| Lesson 3                                      | [Javascript Array Methods](#what-is-an-array)     |
-| Lesson 4                                      | [Javascript Loops](#javascript-loops)             |
-| Lesson 5                                      | [Conditional Statements](#conditional-statements) |
+|          | First steps in Javascript Basic for Beginners     |
+| -------- | ------------------------------------------------- |
+| Lesson 1 | [What is Javascript](#what-is-javascript)         |
+| Lesson 2 | [Javascript Variables](#javascript-variables)     |
+| Lesson 3 | [Javascript Array Methods](#what-is-an-array)     |
+| Lesson 4 | [Javascript Loops](#javascript-loops)             |
+| Lesson 5 | [Conditional Statements](#conditional-statements) |
 
-| Javascript Advance Stuff! |                                                                                                     |
-| ------------------------- | --------------------------------------------------------------------------------------------------- |
-| Lesson 1                  | [Javascript Define & Call Functions](#javascript-define-&-call-functions)                           |
-| Lesson 2                  | [Cookies in Javascript](#cookies-in-javascript)                                                     |
-| Lesson 3                  | [Javascript DOM Tutorial](#javascript-dom-tutorial)                                                 |
-| Lesson 4                  | [OOJS Tutorial](#oojs tutorial)                                                                     |
-| Lesson 5                  | [Internal & External Javascript](#internal-&-external-javascript)                                   |
-| Lesson 6                  | [Javascript Examples](#javascript-example)                                                          |
-| Lesson 7                  | [Javascript Unit Testing Frameworks](#javascript-unit-testing-framework)                            |
-| Lesson 8                  | [TypeScript Tutorial](#typescript-tutorial)                                                         |
-| Lesson 9                  | [TypeScript vs Javascript](#typescript-vs-javascript)                                               |
-| Lesson 10                 | [Java vs JavaScript](#java-vs-javascript)                                                           |
-| Lesson 11                 | [QuickSort in JavaScript](#quicksort-in-javascript)                                                 |
-| Lesson 12                 | [Difference Between =, ==, and === in JavaScript](#difference-between-=,-==,-and-===-in-javascript) |
+|           | Javascript Advance Stuff!                                                                           |
+| --------- | --------------------------------------------------------------------------------------------------- |
+| Lesson 1  | [Javascript Define & Call Functions](#javascript-define-&-call-functions)                           |
+| Lesson 2  | [Cookies in Javascript](#cookies-in-javascript)                                                     |
+| Lesson 3  | [Javascript DOM Tutorial](#javascript-dom-tutorial)                                                 |
+| Lesson 4  | [OOJS Tutorial](#oojs tutorial)                                                                     |
+| Lesson 5  | [Internal & External Javascript](#internal-&-external-javascript)                                   |
+| Lesson 6  | [Javascript Examples](#javascript-example)                                                          |
+| Lesson 7  | [Javascript Unit Testing Frameworks](#javascript-unit-testing-framework)                            |
+| Lesson 8  | [TypeScript Tutorial](#typescript-tutorial)                                                         |
+| Lesson 9  | [TypeScript vs Javascript](#typescript-vs-javascript)                                               |
+| Lesson 10 | [Java vs JavaScript](#java-vs-javascript)                                                           |
+| Lesson 11 | [QuickSort in JavaScript](#quicksort-in-javascript)                                                 |
+| Lesson 12 | [Difference Between =, ==, and === in JavaScript](#difference-between-=,-==,-and-===-in-javascript) |
 
 ---
 
