@@ -67,7 +67,7 @@
 
 - You should place your code within a `<script> tags` if you are keeping it in HTML doc.
 - It will help browser to distinguish your code from the rest of the code.
-- Example of the JavaScript program.
+- Exercise:
 
 ```html
 <html>
@@ -100,14 +100,14 @@ var name;
 - You can assign a value to a variable either while declaring the variable or after.
 
 ```javascript
-var name = "Zakwan";
+var name = "John";
 ```
 
 OR
 
 ```javascript
 var name;
-name = "Zakwan";
+name = "John";
 ```
 
 #### Naming Variables
@@ -194,7 +194,7 @@ students[2] = "Kevin";
 <html>
   <head>
     <title>Arrays</title>
-    <script type="text/javascript">
+    <script>
       var students = new Array("John", "Ann", "Aaron", "Edwin", "Elizabeth");
       Array.prototype.displayItems = function () {
         for (i = 0; i < this.length; i++) {
@@ -222,6 +222,116 @@ students[2] = "Kevin";
       document.write("<br />THE students array after PUSH<br />");
       students.push("New Stuff");
       students.displayItems();
+    </script>
+  </head>
+  <body></body>
+</html>
+```
+
+---
+
+### JavaScript Loops
+
+#### How to use loops?
+
+- Loops are useful when you have to execute the same lines of codes repeatedly, for a specific number of times or as long as a specific condition is true.
+- There are mainly four types of loops in JS:
+  1. for loop
+  2. for/in a loop (will discuss later)
+  3. while loop
+  4. do...while loop
+
+#### for loop
+
+Syntax:
+
+```javascript
+for (statement1; statement2; statement3) {
+  // lines of codes to be executed
+}
+```
+
+- `statement1`: executed first even before executing the looping code. This statement is normally used to assign values to variables that will be used inside the loop.
+- `statement2`: condition to execute the loop.
+- `statement3`: executed every time after the looping code is executed.
+
+- Exercise
+
+```html
+<html>
+  <head>
+    <script>
+      var students = new Array("John", "Ann", "Aaron", "Edwin", "Elizabeth");
+      document.write("<b>Using for loops </b><br />");
+      for (i = 0; i < students.length; i++) {
+        document.write(students[i] + "<br />");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
+```
+
+#### while loop
+
+Syntax:
+
+```javascript
+while (condition) {
+  // lines of codes to be executed
+}
+```
+
+- The `while loop` is executed as long as the specified condition is true. Inside the while loop, you should include the statement that will end the loop at some point of time. Otherwise, your loop will never end and your browser may crash.
+
+- Exercise
+
+```html
+<html>
+  <head>
+    <script>
+      document.write("<b>Using while loops </b><br />");
+      var i = 0,
+        j = 1,
+        k;
+      document.write("Fibonacci series less than 40<br />");
+      while (i < 40) {
+        document.write(i + "<br />");
+        k = i + j;
+        i = j;
+        j = k;
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
+```
+
+#### do...while loop
+
+Syntax:
+
+```javascript
+do {
+  // block of codes to be executed
+} while (condition);
+```
+
+- The `do...while loop` is very similar to `while loop`. The only difference is that in do...while loop, the block of code gets executed once even before checking the condition.
+
+- Exercise
+
+```html
+<html>
+  <head>
+    <script>
+      document.write("<b>Using do...while loops </b><br />");
+      var i = 2;
+      document.write("Even numbers less than 20<br />");
+      do {
+        document.write(i + "<br />");
+        i = i + 2;
+      } while (i < 20);
     </script>
   </head>
   <body></body>
