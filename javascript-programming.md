@@ -1,26 +1,5 @@
 # JavaScript Programming
 
-## Table of Content
-
-|          | First steps in Javascript Basic for Beginners     |
-| -------- | ------------------------------------------------- |
-| Lesson 1 | [What is Javascript](#what-is-javascript)         |
-| Lesson 2 | [Javascript Variables](#javascript-variables)     |
-| Lesson 3 | [Javascript Array Methods](#what-is-an-array)     |
-| Lesson 4 | [Javascript Loops](#javascript-loops)             |
-| Lesson 5 | [Conditional Statements](#conditional-statements) |
-
-|          | Javascript Advance Stuff!                                                                           |
-| -------- | --------------------------------------------------------------------------------------------------- |
-| Lesson 1 | [Javascript Define & Call Functions](#javascript-define-&-call-functions)                           |
-| Lesson 2 | [Cookies in Javascript](#cookies-in-javascript)                                                     |
-| Lesson 3 | [Javascript DOM](#javascript-dom)                                                                   |
-| Lesson 4 | [OOJS](#oojs)                                                                                       |
-| Lesson 5 | [Internal & External Javascript](#internal-&-external-javascript)                                   |
-| Lesson 6 | [Javascript Examples](#javascript-example)                                                          |
-| Lesson 7 | [QuickSort in JavaScript](#quicksort-in-javascript)                                                 |
-| Lesson 8 | [Difference Between =, ==, and === in JavaScript](#difference-between-=,-==,-and-===-in-javascript) |
-
 ---
 
 ### What is JavaScript
@@ -1230,3 +1209,230 @@ document.write(myString);
 ```
 
 ---
+
+### QuickSort in Javascript
+
+#### What is quick sort
+
+- An algorithms that follows divide and conquer approach. It divide into smaller parts based on the condition then sort the operations on the divided parts
+- One of the most used and popular algo.
+- Steps:
+  1. Select an element which is to be called as `pivot` element
+  2. Compare all array elements with the selected pivot element and arrange them so that element less than pivot to the left and so on.
+  3. Perform the same operations on left and right side elements to the pivot element
+
+#### What is sorting
+
+- Arranging elements in the order we want.
+
+#### Default sorting in javascript
+
+- Javascript has a `sort()` function.
+
+```javascript
+var items = [5, 3, 7, 6, 2, 9];
+console.log(items.sort()); // [2,3,5,6,7,9]
+```
+
+- Why choose quick sort over sort
+  - Default `sort()` in javascript use `insertion sort` by `V8 engine of chrome` and `merge sort` by `mozilla and safari`
+  - Not suitable for a large number of array
+
+#### How does quicksort work
+
+1. First find the “pivot” element in the array.
+2. Start the left pointer at first element of the array.
+3. Start the right pointer at last element of the array.
+4. Compare the element pointing with right pointer and if it is greater than the pivot element, then move the right pointer to the left (subtract 1 to the right index). Continue this until right side element is less than or equal to the pivot element.
+5. Check if left pointer is less than or equal to right pointer, then swap the elements in locations of these pointers.
+6. Increment the left pointer and decrement the right pointer.
+7. If index of left pointer is still less than the index of the right pointer, then repeat the process; else return the index of the left pointer.
+
+![quicksort steps](https://www.guru99.com/images/1/011019_1052_QuickSortAl2.png)
+
+#### Determine pivot element
+
+- Selecting pivot element plays a major role. It is advisable to select the middle element, i.e length of an array divided by 2
+
+##### swap two numbers
+
+```javascript
+function swap(items, leftIndex, rightIndex) {
+  var temp = items[leftIndex];
+  items[leftIndex] = items[rightIndex];
+  items[rightIndex] = temp;
+}
+```
+
+##### perform the partition
+
+```javascript
+function partition(items, left, right) {
+  var pivot = items[Math.floor((right + left) / 2)], //middle element
+    i = left, //left pointer
+    j = right; //right pointer
+  while (i <= j) {
+    while (items[i] < pivot) {
+      i++;
+    }
+    while (items[j] > pivot) {
+      j--;
+    }
+    if (i <= j) {
+      swap(items, i, j); //swap two elements
+      i++;
+      j--;
+    }
+  }
+  return i;
+}
+```
+
+##### perform the recursive operation
+
+```javascript
+function quickSort(items, left, right) {
+  var index;
+  if (items.length > 1) {
+    index = partition(items, left, right); //index returned from partition
+    if (left < index - 1) {
+      //more elements on the left side of the pivot
+      quickSort(items, left, index - 1);
+    }
+    if (index < right) {
+      //more elements on the right side of the pivot
+      quickSort(items, index, right);
+    }
+  }
+  return items;
+}
+// first call to quick sort
+var result = quickSort(items, 0, items.length - 1);
+```
+
+##### Complete code
+
+```javascript
+var items = [5, 3, 7, 6, 2, 9];
+function swap(items, leftIndex, rightIndex) {
+  var temp = items[leftIndex];
+  items[leftIndex] = items[rightIndex];
+  items[rightIndex] = temp;
+}
+function partition(items, left, right) {
+  var pivot = items[Math.floor((right + left) / 2)], //middle element
+    i = left, //left pointer
+    j = right; //right pointer
+  while (i <= j) {
+    while (items[i] < pivot) {
+      i++;
+    }
+    while (items[j] > pivot) {
+      j--;
+    }
+    if (i <= j) {
+      swap(items, i, j); //sawpping two elements
+      i++;
+      j--;
+    }
+  }
+  return i;
+}
+
+function quickSort(items, left, right) {
+  var index;
+  if (items.length > 1) {
+    index = partition(items, left, right); //index returned from partition
+    if (left < index - 1) {
+      //more elements on the left side of the pivot
+      quickSort(items, left, index - 1);
+    }
+    if (index < right) {
+      //more elements on the right side of the pivot
+      quickSort(items, index, right);
+    }
+  }
+  return items;
+}
+// first call to quick sort
+var sortedArray = quickSort(items, 0, items.length - 1);
+console.log(sortedArray); //prints [2,3,5,6,7,9]
+```
+
+- **NOTE:** Quick sort runs with the Time Complexity of O(nlogn)
+
+---
+
+### Difference between =, ==, and === in javascript
+
+#### What is `=` in javascript
+
+- An assignment operator
+
+```html
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>JavaScript Operators</h2>
+    <p>a = 2, b = 5, calculate c = a + b, and display c:</p>
+    <p id="demonstration"></p>
+    <script>
+      var a = 2;
+      var b = 5;
+      var c = a + b;
+      document.getElementById("demonstration").innerHTML = c;
+    </script>
+  </body>
+</html>
+```
+
+#### What is `==` in javascript
+
+- An equality operator. It checks whether its two operands are the same or not by changing expression from one data type to othes.
+
+```html
+<!DOCTYPE html>
+<html>
+  <body>
+    <p id="demonstration"></p>
+    <script>
+      var a = 10;
+      document.getElementById("demonstration").innerHTML = a == 20;
+    </script>
+  </body>
+</html>
+```
+
+##### What is `===` in javascript
+
+- strict equality checks that two values are the same or not
+- Vale are not implicitly converted to some other value before comparison
+- If the variable values are of different types, then the values are considered as unequal
+- If the variable are of the same type, are not numeric, and have the same value, they are considered as equal.
+- If both values are numbers, they are considered equal if both are not NaN and are the same value
+
+```html
+<!DOCTYPE html>
+<html>
+  <body>
+    <p id="demo"></p>
+    <script>
+      var x = 10;
+      document.getElementById("demo").innerHTML = x === "10";
+    </script>
+  </body>
+</html>
+```
+
+| =                                              | ==                                                                 | ===                                                                       |
+| ---------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------- |
+| assign value to a variable                     | comparing two variables, but it ignores the datatype of variable   | comparing two variables, but checks datatype                              |
+| assignment operator                            | comparison operator                                                | comparison operator                                                       |
+| Can evaluate to the assigned value             | Checks the equality of two operands without consodering their type | Compares equality of two operands with their types                        |
+| Does not return true or false                  | Return true if the two operands are equal and vice versa           | Return true only if value and dat are the same                            |
+| assign one value of variable to another        | make type correction based upon values of variables                | takes type of variable in consideration                                   |
+| will not compare the value of variables at all | checks for wquality only after doing necessary conversions         | if two variables values are not similar, then will not perform conversion |
+
+---
+
+# THANK YOU
