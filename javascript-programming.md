@@ -14,7 +14,7 @@
 | --------- | --------------------------------------------------------------------------------------------------- |
 | Lesson 1  | [Javascript Define & Call Functions](#javascript-define-&-call-functions)                           |
 | Lesson 2  | [Cookies in Javascript](#cookies-in-javascript)                                                     |
-| Lesson 3  | [Javascript DOM Tutorial](#javascript-dom-tutorial)                                                 |
+| Lesson 3  | [Javascript DOM](#javascript-dom)                                                                   |
 | Lesson 4  | [OOJS Tutorial](#oojs tutorial)                                                                     |
 | Lesson 5  | [Internal & External Javascript](#internal-&-external-javascript)                                   |
 | Lesson 6  | [Javascript Examples](#javascript-example)                                                          |
@@ -573,3 +573,167 @@ function functionName(arg1, arg2) {
   document.cookie =
     "cookiename=cookievalue; expires=Thu, 21 Aug 2023 20:00:00 UTC";
   ```
+
+- You can also set the domain and path to specify to which domain and to which directories in the specific domain the cookie belongs to. By default, a cookie belongs to the page that sets the cookie.
+
+```javascript
+document.cookie =
+  "cookiename=cookievalue; expires=Thu, 21 Aug 2014 20:00:00 UTC; path=/ ";
+```
+
+#### Javascript get Cookie
+
+- You can access the cookies like this:
+
+```javascript
+var x = document.cookie;
+```
+
+#### Javascript Delete Cookie
+
+- To delete a cookie, you just need to set the value of the cookie to empty and set the value of expires to a passed date
+
+```javascript
+document.cookie = "cookiename= ; expires=Thu, 01 Jab 1970 00:00:00 GMT";
+```
+
+- Exercise
+
+```html
+<html>
+  <head>
+    <title>Cookie!!!</title>
+    <script>
+      function createCookie(cookieName, cookieValue, daysToExpire) {
+        var date = new Date();
+        date.setTime(date.getTime() + daysToExpire * 24 * 60 * 60 * 1000);
+        document.cookie =
+          cookieName + "=" + cookieValue + "; expires=" + date.toGMTString();
+      }
+      function accessCookie(cookieName) {
+        var name = cookieName + "=";
+        var allCookieArray = document.cookie.split(";");
+        for (var i = 0; i < allCookieArray.length; i++) {
+          var temp = allCookieArray[i].trim();
+          if (temp.indexOf(name) == 0)
+            return temp.substring(name.length, temp.length);
+        }
+        return "";
+      }
+      function checkCookie() {
+        var user = accessCookie("testCookie");
+        if (user != "") alert("Welcome Back " + user + "!!!");
+        else {
+          user = prompt("Please enter your name");
+          num = prompt(
+            "How many days you want to store your name on your computer?"
+          );
+          if (user != "" && user != null) {
+            createCookie("testCookie", user, num);
+          }
+        }
+      }
+    </script>
+  </head>
+  <body onload="checkCookie()"></body>
+</html>
+```
+
+---
+
+### Javascript DOM
+
+#### What is DOM
+
+- DOM - Document Object Model.
+- Javascript can access all the elements in a webpage using DOM
+
+![js-dom](https://www.guru99.com/images/JavaScript/javascript8_1.png)
+
+#### How to use DOM and Events
+
+- By using DOM, javascript can create new elements and attributes, change the existing elements and attributes and even remove existing elements and attributes.
+- Can also react to existing events and create new ecents in the page.
+
+#### getElementById, innerHTML
+
+- getElementById = access elements and attributes whose id is set
+- innerHTML = access the content of an element
+
+```html
+<html>
+  <head>
+    <title>DOM!!!</title>
+  </head>
+  <body>
+    <h1 id="one">Welcome</h1>
+    <p>This is the welcome message.</p>
+    <h2>Technology</h2>
+    <p>This is the technology section.</p>
+    <script>
+      var text = document.getElementById("one").innerHTML;
+      alert("The first heading is " + text);
+    </script>
+  </body>
+</html>
+```
+
+#### getElementsByTagName
+
+- getElementsByTagName = access elements and attributes using tag name. Return an array of all the items with the same tag name
+
+```html
+<html>
+  <head>
+    <title>DOM!!!</title>
+  </head>
+  <body>
+    <h1>Welcome</h1>
+    <p>This is the welcome message.</p>
+    <h2>Technology</h2>
+    <p id="second">This is the technology section.</p>
+    <script>
+      var paragraphs = document.getElementsByTagName("p");
+      alert("Content in the second paragraph is " + paragraphs[1].innerHTML);
+      document.getElementById("second").innerHTML =
+        "The orginal message is changed.";
+    </script>
+  </body>
+</html>
+```
+
+#### Event handler
+
+- createElement = create new element
+- removeChild = remove an element
+
+```javascript
+document.getElementById(id).onclick = function () {
+  //lines of code
+};
+```
+
+OR
+
+```javascript
+document.getElementById(id).addEventListener("click", functionname);
+```
+
+- Example
+
+```html
+<html>
+  <head>
+    <title>DOM!!!</title>
+  </head>
+  <body>
+    <input type="button" id="btnClick" value="Click Me!!" />
+    <script>
+      document.getElementById("btnClick").addEventListener("click", clicked);
+      function clicked() {
+        alert("You clicked me!!!");
+      }
+    </script>
+  </body>
+</html>
+```
