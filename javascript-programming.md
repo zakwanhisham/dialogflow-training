@@ -549,3 +549,27 @@ function functionName(arg1, arg2) {
   <body></body>
 </html>
 ```
+
+---
+
+### Cookies in Javascript
+
+#### What are Cookies
+
+- Cookies is a piece of data that is stored on computer to be accesses on the browser.
+- An example of cookie is the `remember password` feature.
+
+#### Javascript set Cookie
+
+- Create cookie using this syntax:
+
+  ```javascript
+  document.cookie = "cookiename=cookievalue";
+  ```
+
+- You can add `expiry date`. The `expiry date` should be set in the `UTC/GMT` format. If there is no expiry date, then the cookie will be remove when browser is close.
+
+  ```javascript
+  document.cookie =
+    "cookiename=cookievalue; expires=Thu, 21 Aug 2023 20:00:00 UTC";
+  ```
