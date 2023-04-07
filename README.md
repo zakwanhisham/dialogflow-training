@@ -12,7 +12,7 @@ Need to create a chatbot training
 
    - Building Your First Chatbot with Python NLP Library
 
-4. [ ] JavaScript Programming Practice
+4. [x] JavaScript Programming Practice
 
 5. [ ] Introduction to Node.js
 
