@@ -10,20 +10,16 @@
 | Lesson 4 | [Javascript Loops](#javascript-loops)             |
 | Lesson 5 | [Conditional Statements](#conditional-statements) |
 
-|           | Javascript Advance Stuff!                                                                           |
-| --------- | --------------------------------------------------------------------------------------------------- |
-| Lesson 1  | [Javascript Define & Call Functions](#javascript-define-&-call-functions)                           |
-| Lesson 2  | [Cookies in Javascript](#cookies-in-javascript)                                                     |
-| Lesson 3  | [Javascript DOM](#javascript-dom)                                                                   |
-| Lesson 4  | [OOJS Tutorial](#oojs tutorial)                                                                     |
-| Lesson 5  | [Internal & External Javascript](#internal-&-external-javascript)                                   |
-| Lesson 6  | [Javascript Examples](#javascript-example)                                                          |
-| Lesson 7  | [Javascript Unit Testing Frameworks](#javascript-unit-testing-framework)                            |
-| Lesson 8  | [TypeScript Tutorial](#typescript-tutorial)                                                         |
-| Lesson 9  | [TypeScript vs Javascript](#typescript-vs-javascript)                                               |
-| Lesson 10 | [Java vs JavaScript](#java-vs-javascript)                                                           |
-| Lesson 11 | [QuickSort in JavaScript](#quicksort-in-javascript)                                                 |
-| Lesson 12 | [Difference Between =, ==, and === in JavaScript](#difference-between-=,-==,-and-===-in-javascript) |
+|          | Javascript Advance Stuff!                                                                           |
+| -------- | --------------------------------------------------------------------------------------------------- |
+| Lesson 1 | [Javascript Define & Call Functions](#javascript-define-&-call-functions)                           |
+| Lesson 2 | [Cookies in Javascript](#cookies-in-javascript)                                                     |
+| Lesson 3 | [Javascript DOM](#javascript-dom)                                                                   |
+| Lesson 4 | [OOJS](#oojs)                                                                                       |
+| Lesson 5 | [Internal & External Javascript](#internal-&-external-javascript)                                   |
+| Lesson 6 | [Javascript Examples](#javascript-example)                                                          |
+| Lesson 7 | [QuickSort in JavaScript](#quicksort-in-javascript)                                                 |
+| Lesson 8 | [Difference Between =, ==, and === in JavaScript](#difference-between-=,-==,-and-===-in-javascript) |
 
 ---
 
@@ -737,3 +733,302 @@ document.getElementById(id).addEventListener("click", functionname);
   </body>
 </html>
 ```
+
+---
+
+### OOJS
+
+#### OOP concept in javascript
+
+- create objects that act like real life objects.
+- Eg: Student or home can be an object that have many unique characteristics of their own.
+  - properties nad methods to objects can be created easier
+
+### How to create an object
+
+```javascript
+var objName = new Object();
+objName.property1 = value1;
+objName.property2 = value2;
+objName.method1 = function () {
+  // lines of code
+};
+```
+
+OR
+
+```javascript
+var objName = {
+  property1: value1,
+  property2: value2,
+  method1: function () {
+    // lines of code
+  },
+};
+```
+
+#### Access object properties an methds
+
+- Access properties of an object:
+
+```javascript
+objName.propertyname;
+```
+
+- Access methods of an object:
+
+```javascript
+objName.methodname();
+```
+
+- Example
+
+```html
+<html>
+  <head>
+    <title>Objects!!!</title>
+    <script>
+      var student = new Object();
+      student.fName = "John";
+      student.lName = "Smith";
+      student.id = 5;
+      student.markE = 76;
+      student.markM = 99;
+      student.markS = 87;
+      student.calculateAverage = function () {
+        return (student.markE + student.markM + student.markS) / 3;
+      };
+      student.displayDetails = function () {
+        document.write("Student Id: " + student.id + "<br />");
+        document.write(
+          "Name: " + student.fName + " " + student.lName + "<br />"
+        );
+        var avg = student.calculateAverage();
+        document.write("Average Marks: " + avg);
+      };
+      student.displayDetails();
+    </script>
+  </head>
+  <body></body>
+</html>
+```
+
+#### OOP constructor
+
+- Object constuctor helps create an object type which can be reused to meet the need.
+
+```html
+<html>
+  <head>
+    <script>
+      function Student(first, last, id, english, maths, science) {
+        this.fName = first;
+        this.lName = last;
+        this.id = id;
+        this.markE = english;
+        this.markM = maths;
+        this.markS = science;
+        this.calculateAverage = function () {
+          return (this.markE + this.markM + this.markS) / 3;
+        };
+        this.displayDetails = function () {
+          document.write("Student Id: " + this.id + "<br />");
+          document.write("Name: " + this.fName + " " + this.lName + "<br />");
+          var avg = this.calculateAverage();
+          document.write("Average Marks: " + avg + "<br /><br />");
+        };
+      }
+      var st1 = new Student("John", "Smith", 15, 85, 79, 90);
+      var st2 = new Student("Hannah", "Turner", 23, 75, 80, 82);
+      var st3 = new Student("Kevin", "White", 4, 93, 89, 90);
+      var st4 = new Student("Rose", "Taylor", 11, 55, 63, 45);
+      st1.displayDetails();
+      st2.displayDetails();
+      st3.displayDetails();
+      st4.displayDetails();
+    </script>
+  </head>
+  <body></body>
+</html>
+```
+
+#### Loop through the properties of an object
+
+```javascript
+for (varName in objName) {
+  // lines of codes
+}
+```
+
+- Example
+
+```html
+<html>
+  <head>
+    <script>
+      var employee = { first: "John", last: "Doe", department: "Accounts" };
+      var details = "";
+      document.write("<b>Using for/in loops </b><br />");
+      for (var x in employee) {
+        details = x + ": " + employee[x];
+        document.write(details + "<br />");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
+```
+
+---
+
+### Internal & External javascript
+
+- There are 2 ways to use javascript code:
+  1. Internally within HTML doc
+  2. Separate external file
+
+#### Internal javascript
+
+- Example
+
+```html
+<html>
+  <head>
+    <title>My First JavaScript code!!!</title>
+    <script>
+      // Create a Date Object
+      var day = new Date();
+      // Use getDay function to obtain todays Day.
+      // getDay() method returns the day of the week as a number like 0 for Sunday, 1 for Monday,….., 5
+      // This value is stored in today variable
+      var today = day.getDay();
+      // To get the name of the day as Sunday, Monday or Saturday, we have created an array named weekday and stored the values
+      var weekday = new Array(7);
+      weekday[0] = "Sunday";
+      weekday[1] = "Monday";
+      weekday[2] = "Tuesday";
+      weekday[3] = "Wednesday";
+      weekday[4] = "Thursday";
+      weekday[5] = "Friday";
+      weekday[6] = "Saturday";
+      // weekday[today] will return the day of the week as we want
+      document.write("Today is " + weekday[today] + ".");
+    </script>
+  </head>
+  <body></body>
+</html>
+```
+
+#### External javascript
+
+- Add this line to the HTML doc
+
+```html
+<script src="currentdetails.js"></script>
+```
+
+- This is the `currentdetails.js` file
+
+```javascript
+var currentDate = new Date();
+var day = currentDate.getDate();
+var month = currentDate.getMonth() + 1;
+var monthName;
+
+var hours = currentDate.getHours();
+var mins = currentDate.getMinutes();
+var secs = currentDate.getSeconds();
+var strToAppend;
+if (hours > 12) {
+  hours1 = "0" + (hours - 12);
+  strToAppend = "PM";
+} else if (hours < 12) {
+  hours1 = "0" + hours;
+  strToAppend = "AM";
+} else {
+  hours1 = hours;
+  strToAppend = "PM";
+}
+
+if (mins < 10) mins = "0" + mins;
+if (secs < 10) secs = "0" + secs;
+
+switch (month) {
+  case 1:
+    monthName = "January";
+    break;
+  case 2:
+    monthName = "February";
+    break;
+  case 3:
+    monthName = "March";
+    break;
+  case 4:
+    monthName = "April";
+    break;
+  case 5:
+    monthName = "May";
+    break;
+  case 6:
+    monthName = "June";
+    break;
+  case 7:
+    monthName = "July";
+    break;
+  case 8:
+    monthName = "August";
+    break;
+  case 9:
+    monthName = "September";
+    break;
+  case 10:
+    monthName = "October";
+    break;
+  case 11:
+    monthName = "November";
+    break;
+  case 12:
+    monthName = "December";
+    break;
+}
+
+var year = currentDate.getFullYear();
+var myString;
+myString =
+  "Today is " +
+  day +
+  " - " +
+  monthName +
+  " - " +
+  year +
+  ".<br />Current time is " +
+  hours1 +
+  ":" +
+  mins +
+  ":" +
+  secs +
+  " " +
+  strToAppend +
+  ".";
+document.write(myString);
+```
+
+- The final file look like this
+
+```html
+<html>
+  <head>
+    <title>My External JavaScript Code!!!</title>
+    <script src="currentdetails.js"></script>
+  </head>
+  <body></body>
+</html>
+```
+
+#### When to use internal and external
+
+- If you have only a few lines of code that is specific to a particular webpage, then it is better to keep javascript code internally
+
+- If the javascript code is used in many web pages, then you can consider using external file.
+
+---
