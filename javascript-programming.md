@@ -1428,10 +1428,10 @@ console.log(sortedArray); //prints [2,3,5,6,7,9]
 | ---------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------- |
 | assign value to a variable                     | comparing two variables, but it ignores the datatype of variable   | comparing two variables, but checks datatype                              |
 | assignment operator                            | comparison operator                                                | comparison operator                                                       |
-| Can evaluate to the assigned value             | Checks the equality of two operands without consodering their type | Compares equality of two operands with their types                        |
+| Can evaluate to the assigned value             | Checks the equality of two operands without considering their type | Compares equality of two operands with their types                        |
 | Does not return true or false                  | Return true if the two operands are equal and vice versa           | Return true only if value and dat are the same                            |
 | assign one value of variable to another        | make type correction based upon values of variables                | takes type of variable in consideration                                   |
-| will not compare the value of variables at all | checks for wquality only after doing necessary conversions         | if two variables values are not similar, then will not perform conversion |
+| will not compare the value of variables at all | checks for equality only after doing necessary conversions         | if two variables values are not similar, then will not perform conversion |
 
 ---
 
