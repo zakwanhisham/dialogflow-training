@@ -1403,7 +1403,7 @@ console.log(sortedArray); //prints [2,3,5,6,7,9]
 </html>
 ```
 
-##### What is `===` in javascript
+#### What is `===` in javascript
 
 - strict equality checks that two values are the same or not
 - Vale are not implicitly converted to some other value before comparison
