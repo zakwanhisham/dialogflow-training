@@ -14,7 +14,7 @@ Need to create a chatbot training
 
 4. [x] JavaScript Programming Practice
 
-5. [ ] Introduction to Node.js
+5. [x] Introduction to Node.js
 
 6. [ ] Introduction to Dialogflow
 
